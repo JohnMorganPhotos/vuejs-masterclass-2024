@@ -1,0 +1,17 @@
+Pulse
+yz9Y495@9n5h!N
+
+API Key
+anon public
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByanVkZGloYmZxY3p6cHRvZGVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg3NjM3MjAsImV4cCI6MjA1NDMzOTcyMH0.2GyfbqR9esHjHG7ztR1PLo2gbgHhF2IaY1dZ9EgVg2s
+
+service_role
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByanVkZGloYmZxY3p6cHRvZGVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg3NjM3MjAsImV4cCI6MjA1NDMzOTcyMH0.2GyfbqR9esHjHG7ztR1PLo2gbgHhF2IaY1dZ9EgVg2s
+
+Url
+https://prjuddihbfqczzptodee.supabase.co
+
+
+
