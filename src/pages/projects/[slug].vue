@@ -2,11 +2,11 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router/auto'
 
-const route = useRoute('/projects/[id]') // Ensures TypeScript knows 'id' exists
+const route = useRoute() // Ensures TypeScript knows 'id' exists
 </script>
 
 <template>
   <div>
-    <h1>Project Name: {{ route.params?.id }}</h1>
+    <h1>Project Name: {{ route.params?.slug }}</h1>
   </div>
 </template>

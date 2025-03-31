@@ -5,6 +5,7 @@ import { h, ref } from 'vue'
 import type { Tables } from '../../../database/types' // Import the type from the database folder
 import type { ColumnDef } from '@tanstack/table-core' // Import ColumnDef from the appropriate library
 import DataTable from '@/components/ui/data-table/DataTable.vue'
+import { RouterLink } from 'vue-router'
 
 const tasks = ref<Tables<'tasks'>[] | null>(null)
 ;(async () => {
@@ -16,41 +17,74 @@ const tasks = ref<Tables<'tasks'>[] | null>(null)
   tasks.value = data
 })()
 
-interface Payment {
-  id: string
-  amount: number
-  status: 'pending' | 'processing' | 'success' | 'failed'
-  email: string
-}
+// interface Payment {
+//   id: string
+//   amount: number
+//   status: 'pending' | 'processing' | 'success' | 'failed'
+//   email: string
+// }
 
-const payments: Payment[] = [
-  {
-    id: '728ed52f',
-    amount: 100,
-    status: 'pending',
-    email: 'm@example.com',
-  },
-  {
-    id: '489e1d42',
-    amount: 125,
-    status: 'processing',
-    email: 'example@gmail.com',
-  },
-  // ...
-]
+// const payments: Payment[] = [
+//   {
+//     id: '728ed52f',
+//     amount: 100,
+//     status: 'pending',
+//     email: 'm@example.com',
+//   },
+//   {
+//     id: '489e1d42',
+//     amount: 125,
+//     status: 'processing',
+//     email: 'example@gmail.com',
+//   },
+//   // ...
+// ]
 
-const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Tables<'tasks'>>[] = [
   {
-    accessorKey: 'amount',
-    header: () => h('div', { class: 'text-right' }, 'Amount'),
+    accessorKey: 'name',
+    header: () => h('div', { class: 'text-left' }, 'Name'),
     cell: ({ row }) => {
-      const amount = Number.parseFloat(row.getValue('amount'))
-      const formatted = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-      }).format(amount)
-
-      return h('div', { class: 'text-right font-medium' }, formatted)
+      return h(
+        RouterLink,
+        {
+          to: `/tasks/${row.original.id}`,
+          class: 'text-left font-medium hover:bg-muted block w-full',
+        },
+        () => row.getValue('name'),
+      )
+    },
+  },
+  {
+    accessorKey: 'status',
+    header: () => h('div', { class: 'text-left' }, 'Status'),
+    cell: ({ row }) => {
+      return h('div', { class: 'text-left font-medium' }, row.getValue('status'))
+    },
+  },
+  {
+    accessorKey: 'due_date',
+    header: () => h('div', { class: 'text-left' }, 'Due Date'),
+    cell: ({ row }) => {
+      return h('div', { class: 'text-left font-medium' }, row.getValue('due_date'))
+    },
+  },
+  {
+    accessorKey: 'project_id',
+    header: () => h('div', { class: 'text-left' }, 'Project'),
+    cell: ({ row }) => {
+      return h('div', { class: 'text-left font-medium' }, row.getValue('project_id'))
+    },
+  },
+  {
+    accessorKey: 'collaborators',
+    header: () => h('div', { class: 'text-left' }, 'Collaborators'),
+    cell: ({ row }) => {
+      return h(
+        'div',
+        { class: 'text-left font-medium' },
+        JSON.stringify(row.getValue('collaborators')),
+      )
     },
   },
 ]
@@ -58,7 +92,7 @@ const columns: ColumnDef<Payment>[] = [
 
 <template>
   <h1>Task Page</h1>
-  <DataTable :columns="columns" :data="payments" />
+  <DataTable v-if="tasks" :columns="columns" :data="tasks" />
   <!-- <div>
     <h1>Task Page</h1>
     <ul>
