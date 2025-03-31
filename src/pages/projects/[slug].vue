@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { useRoute } from 'vue-router/auto'
+// import { useRoute } from 'vue-router/auto'
 
 const route = useRoute() // Ensures TypeScript knows 'id' exists
 </script>

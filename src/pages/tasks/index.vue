@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import { supabase } from '@/lib/supabaseClient'
-import { h, ref } from 'vue'
+// import { h, ref } from 'vue'
 import type { Tables } from '../../../database/types' // Import the type from the database folder
 import type { ColumnDef } from '@tanstack/table-core' // Import ColumnDef from the appropriate library
 import DataTable from '@/components/ui/data-table/DataTable.vue'
