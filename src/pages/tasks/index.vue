@@ -56,6 +56,7 @@ const columns: ColumnDef<Payment>[] = [
 </script>
 
 <template>
+  <h1>Task Page</h1>
   <DataTable :columns="columns" :data="payments" />
   <!-- <div>
     <h1>Task Page</h1>
