@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabaseClient'
 import { h, ref } from 'vue'
 import type { Tables } from '../../../database/types' // Import the type from the database folder
 import type { ColumnDef } from '@tanstack/table-core' // Import ColumnDef from the appropriate library
+import DataTable from '@/components/ui/data-table/DataTable.vue'
 
 const tasks = ref<Tables<'tasks'>[] | null>(null)
 ;(async () => {
@@ -57,13 +58,13 @@ const columns: ColumnDef<Payment>[] = [
 
 <template>
   <h1>Task Page</h1>
-  <!-- <DataTable :columns="columns" :data="payments" /> -->
-  <div>
+  <DataTable :columns="columns" :data="payments" />
+  <!-- <div>
     <h1>Task Page</h1>
     <ul>
       <li v-for="task in tasks" :key="task.id">
         {{ task.name }}
       </li>
     </ul>
-  </div>
+  </div> -->
 </template>
