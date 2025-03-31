@@ -19,7 +19,6 @@ const projects = ref<Tables<'projects'>[] | null>(null)
 <template>
   <div>
     <h1>Project Page</h1>
-    <RouterLink to="/">Go To Home</RouterLink>
     <ul>
       <li v-for="project in projects" :key="project.id">{{ project.name }}</li>
     </ul>

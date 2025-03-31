@@ -6,6 +6,16 @@ import AuthLayout from '@/components/layout/main/AuthLayout.vue'
 
 <template>
   <AuthLayout>
-    <RouterLink />
+    <RouterView />
   </AuthLayout>
 </template>
+
+<!-- <template>
+  <SideBar />
+  <div class="flex flex-col lg:ml-52 ml-16 transition-[margin]">
+    <TopNavBar />
+    <main>
+      <RouterView />
+    </main>
+  </div>
+</template> -->

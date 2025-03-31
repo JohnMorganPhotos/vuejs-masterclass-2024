@@ -57,14 +57,13 @@ const columns: ColumnDef<Payment>[] = [
 
 <template>
   <h1>Task Page</h1>
-  <DataTable :columns="columns" :data="payments" />
-  <!-- <div>
+  <!-- <DataTable :columns="columns" :data="payments" /> -->
+  <div>
     <h1>Task Page</h1>
-    <RouterLink to="/">Go To Home</RouterLink>
     <ul>
       <li v-for="task in tasks" :key="task.id">
         {{ task.name }}
       </li>
     </ul>
-  </div> -->
+  </div>
 </template>
