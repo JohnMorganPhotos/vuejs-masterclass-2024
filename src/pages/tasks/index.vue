@@ -4,7 +4,7 @@ import { supabase } from '@/lib/supabaseClient'
 // import { h, ref } from 'vue'
 import type { Tables } from '../../../database/types' // Import the type from the database folder
 import type { ColumnDef } from '@tanstack/table-core' // Import ColumnDef from the appropriate library
-import DataTable from '@/components/ui/data-table/DataTable.vue'
+// import DataTable from '@/components/ui/data-table/DataTable.vue'
 import { RouterLink } from 'vue-router'
 
 const tasks = ref<Tables<'tasks'>[] | null>(null)
